@@ -1,6 +1,16 @@
 <?php
 defined("BASEPATH") OR exit("No direct script access allowed");
 
+// Start the session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Check if user is already logged in
+if (isset($_SESSION['user_id'])) {
+    header('Location:index.php');
+    exit();
+}
 $error = "";
 $success = "";
 

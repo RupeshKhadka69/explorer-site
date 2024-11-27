@@ -21,8 +21,8 @@ switch ($page) {
         require_once dirname(__DIR__) . '/templates/auth/login.php';
         break;
     case 'logout':
-        session_destroy();
-        header("Location:index.php?page=login ");
+        require_once dirname(__DIR__) . '/templates/auth/logout.php';
+        break;
 
     default:
         require_once dirname(__DIR__) . '/templates/dashboard.php';
